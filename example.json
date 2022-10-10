@@ -1,0 +1,37 @@
+{
+  "config": {
+    "end": 1851182300000,
+    "start": 1650922200000
+  },
+  "flags": {
+    "chall1-crypto": "FLAG{T1h5_1s_a_3xampl3_fl@g}",
+    "chall2-osint": "FLAG{I_g0t_r0ll3d}"
+  },
+  "readme": {
+    "welcome": {
+      "content": "One team member or solo player should click on [Join a Team](/?#login) then login. Any remaining team members will need the \\\"Team Secret Key\\\".  If teaming up, please limit 3-4 persons per team to keep it fun.\\n\\nRules of Engagement: Do not attack or brute force the game scoreboard platform. Do not intentionally break online challenges for other players.\\n\\nThis game is set up to use dynamic scoring that rewards for difficulty. As teams capture the same flag, the overall challenge value will decrease and update all relevant scores.  Challenges with many captures may indicate ease and will reward less points - likewise, fewer captures may reflect difficulty with the reward of higher point values.\\nNote that flags will be in a FLAG{...} format and are Case Sensitive.\\n\\nGood luck and have fun!",
+      "order": 0,
+      "silent": false,
+      "title": "Welcome to the Synthwave CTF"
+    }
+  },
+  "tasks": {
+    "chall1-crypto": {
+      "attachment": "https://raw.githubusercontent.com/eljeffeg/SynthwaveCTF/main/package.json",
+      "attachment2": "https://raw.githubusercontent.com/eljeffeg/SynthwaveCTF/main/firebase.json",
+      "category": "crypto",
+      "description": "This is an example of a Challenge.",
+      "label": "cryptography, hashing",
+      "name": "Crypto Chall I",
+      "visible": true
+    },
+    "chall2-osint": {
+      "category": "osint",
+      "description": "This is an example of a Challenge.",
+      "label": "osint",
+      "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "name": "Rick Rolled",
+      "visible": true
+    }
+  }
+}

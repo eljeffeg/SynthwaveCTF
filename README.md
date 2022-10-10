@@ -8,6 +8,7 @@ Note that you do not need to use [KCTF](https://google.github.io/kctf/) unless y
 
 To run this, you need to make the following changes:
  1. Create a Firebase project, see https://firebase.google.com/docs/web/setup for details.
+ 1. Import the `example.json` into your Firebase Realtime Database.
  1. Set `rules.json` as the Firebase rules (that's the equivalent of the server-side code).
  1. Modify the following `public/js/bootstrap.js` data attributes:
  ```js
