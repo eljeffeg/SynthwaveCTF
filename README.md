@@ -26,7 +26,7 @@ To run this, you need to make the following changes:
         const APP_ID = 'INSERT_YOUR_APP_ID'
 ```
 
-Yarn is use to run locally (`yarn dev`), build (`yarn build`), and deploy (`yarn deploy`).  Note the `deploy`will build prior to the firebase deploy.
+Yarn is use to run locally (`yarn dev`), build (`yarn build`), and deploy (`yarn deploy`).  Note that `deploy` will also run a build opertation.
 
 # Notes
 The scoreboard uses a third-party font called [VP Pixel Simplified](https://www.fonts.com/font/vp-type/vp-pixel/simplified), you can use instead [Free Pixel](https://www.dafont.com/free-pixel.font). This might require some changes to the CSS.
