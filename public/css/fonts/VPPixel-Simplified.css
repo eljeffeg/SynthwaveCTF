@@ -1,0 +1,5 @@
+@font-face {font-family: "VPPixel-Simplified";
+    src: url("/css/fonts/VPPixel-Simplified.woff2") format("woff2"), /* chrome、firefox */
+    url("/css/fonts/VPPixel-Simplified.woff") format("woff"), /* chrome、firefox */
+    url("/css/fonts/VPPixel-Simplified.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  }

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Synthwave CTF</title>
+  <link rel="stylesheet" type="text/css" href="css/scoreboard.css">
+  <link rel="stylesheet" type="text/css" href="css/game.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body data-keydown="keyDown" class="box">
+  <div class="box">
+    <canvas width="1920" height="1080" id="canvas" class="stay-in-place"></canvas>
+    <div id="computer">
+      <div class="termtitle">
+        <h1 id="termtitle"></h1>
+      </div>
+      <div id="termscreen" class="termscreen"></div>
+      <iframe id="framescreen" src="#" scrolling="no" class="framescreen" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <sb-console></sb-console>
+    <sb-border id="ctf_screen" class="scn_down">
+      <sb-main>
+        <sb-toolbar data-click="toggleMenu" role="navigation">
+          <div class="soundBox"><img id="soundImg" data-click="toggleSound" src=""></div>
+          <div class="gameBox"><img id="gameImg" data-click="toggleGame" src=""></div>
+          <a href="#teams/">Teams</a>
+          <a href="#scoreboard/">Scoreboard</a>
+          <a href="#challenges/">Challenges</a>
+          <sb-logo role="button" title="logo" tabindex="0" data-click="showLocation/teams,toggleMenu"></sb-logo>
+          <a href="#quest/">Quest</a>
+          <sb-game class="gamemenu" data-click="toggleGame">Game</sb-game>
+          <sb-game class="gamemenu" data-click="toggleSound">Sound</sb-game>
+          <a href="#readme/" data-click="clearReadme,toggleMenu" class="sb-readme-link">Readme</a>
+          <a href="#login" data-click="logout,toggleMenu" class="sb-login-link"></a>
+        </sb-toolbar>
+        <sb-content role="main" id="readme">
+          <sb-readme>
+            <template id="sb-update">
+              <h3 class="sb-dashed">
+                <sb-var data-var="title"></sb-var>
+              </h3>
+              <p role="article">
+                <sb-readme-content data-var="content"></sb-readme-content>
+              </p>
+            </template>
+          </sb-readme>
+        </sb-content>
+
+        <sb-content role="main" id="quest">
+         
+            <sb-quest>
+              <sb-quest-head>
+                <h2>Quest</h2>
+                <div class="sb-dashed sb-spacer"></div>
+                <h3>Map</h3>
+              </sb-quest-head>
+              <sb-quest-map>
+                Begin
+                <svg viewBox="-6.3 0 100 50">
+                  <mask id="quest-mask">
+                    <use aria-hidden="true" href="#quest-graph"></use>
+                  </mask>
+                  <g id="quest-graph-interactive">
+                    <g id="quest-graph">
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-letter" aria-label="misc-letter" data-id="quest-misc-letter" data-visible="true">
+                        <line x1="0" y1="25" x2="12.5" y2="8.3"></line>
+                        <line x1="0" y1="25" x2="12.5" y2="25"></line>
+                        <line x1="0" y1="25" x2="12.5" y2="41.7"></line>
+                        <circle r="2" cx="0" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-moar" aria-label="pwn-moar" data-id="quest-pwn-moar">
+                        <line x1="12.5" y1="41.7" x2="25" y2="41.7"></line>
+                        <circle r="2" cx="12.5" cy="41.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-floppy" aria-label="misc-floppy" data-id="quest-misc-floppy">
+                        <line x1="12.5" y1="25" x2="19" y2="33.5"></line>
+                        <line x1="12.5" y1="25" x2="25" y2="25"></line>
+                        <circle r="2" cx="12.5" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-ocr-is-cool" aria-label="misc-ocr-is-cool" data-id="quest-misc-ocr-is-cool">
+                        <line x1="12.5" y1="8.3" x2="25" y2="16.7"></line>
+                        <circle r="2" cx="12.5" cy="8.3"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-floppy2" aria-label="misc-floppy2" data-id="quest-misc-floppy2">
+                        <line x1="19" y1="33.5" x2="25" y2="41.7"></line>
+                        <circle r="2" cx="19" cy="33.5"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-re-mngmnt-iface" aria-label="pwn-re-mngmnt-iface" data-id="quest-pwn-re-mngmnt-iface">
+                        <line x1="25" y1="41.7" x2="37.5" y2="33.5"></line>
+                        <circle r="2" cx="25" cy="41.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="web-js-safe-1" aria-label="web-js-safe-1" data-id="quest-web-js-safe-1">
+                        <line x1="25" y1="25" x2="37.5" y2="25"></line>
+                        <circle r="2" cx="25" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-security-by-obscurity" aria-label="misc-security-by-obscurity" data-id="quest-misc-security-by-obscurity">
+                        <line x1="25" y1="16.7" x2="37.5" y2="8.3"></line>
+                        <circle r="2" cx="25" cy="16.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-re-mngmnt-iface2" aria-label="pwn-re-mngmnt-iface2" data-id="quest-pwn-re-mngmnt-iface2">
+                        <line x1="37.5" y1="33.5" x2="50" y2="41.7"></line>
+                        <circle r="2" cx="37.5" cy="33.5"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="web-router-ui" aria-label="web-router-ui" data-id="quest-web-router-ui">
+                        <line x1="37.5" y1="25" x2="50" y2="25"></line>
+                        <line x1="37.5" y1="25" x2="50" y2="16.7"></line><circle r="2" cx="37.5" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="re-firmware" aria-label="re-firmware" data-id="quest-re-firmware">
+                        <line x1="37.5" y1="8.3" x2="50" y2="16.7"></line>
+                        <circle r="2" cx="37.5" cy="8.3"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-re-mngmnt-iface3" aria-label="pwn-re-mngmnt-iface3" data-id="quest-pwn-re-mngmnt-iface3">
+                        <line x1="50" y1="41.7" x2="62.5" y2="41.7"></line>
+                        <circle r="2" cx="50" cy="41.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-motd" aria-label="pwn-motd" data-id="quest-pwn-motd">
+                        <line x1="50" y1="25" x2="62.5" y2="25"></line>
+                        <circle r="2" cx="50" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="re-gatekeeper" aria-label="re-gatekeeper" data-id="quest-re-gatekeeper">
+                        <line x1="50" y1="16.7" x2="62.5" y2="8.3"></line>
+                        <circle r="2" cx="50" cy="16.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-env" aria-label="pwn-env" data-id="quest-pwn-env">
+                        <line x1="62.5" y1="41.7" x2="75" y2="25"></line>
+                        <circle r="2" cx="62.5" cy="41.7"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-poetry" aria-label="pwn-poetry" data-id="quest-pwn-poetry">
+                        <line x1="62.5" y1="25" x2="75" y2="25"></line>
+                        <circle r="2" cx="62.5" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="misc-media-db" aria-label="misc-media-db" data-id="quest-misc-media-db">
+                        <line x1="62.5" y1="8.3" x2="75" y2="25"></line>
+                        <circle r="2" cx="62.5" cy="8.3"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-fridge-todo-list" aria-label="pwn-fridge-todo-list" data-id="quest-pwn-fridge-todo-list">
+                        <line x1="75" y1="25" x2="87.5" y2="25"></line>
+                        <circle r="2" cx="75" cy="25"></circle>
+                      </g>
+                      <g tabindex="0" role="button" data-click="setBeginnersTaskActive/true" data-for="pwn-fridge-beep" aria-label="pwn-fridge-beep" data-id="quest-pwn-fridge-beep" data-last="true">
+                        <circle r="3" cx="87.5" cy="25">
+                          <title style="font: sans-serif">&#x1F370;</title>
+                        </circle>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                End
+              </sb-quest-map>
+             
+              <sb-quest-tasks>
+                <template id="sb-quest-task" data-submit="submitBeginnersFlag">
+                  <sb-task-dialog-container>
+                    <sb-task-dialog class="sb-glow-border" aria-modal="true" role="dialog">
+                      <sb-task-header class="sb-dashed" data-click="setBeginnersTaskActive/false">
+                        <div class="sb-task-title">
+                          <h2><sb-var data-var="name"></sb-var></h2>
+                          <sb-meta>
+                            <sb-var data-var="label"></sb-var>
+                          </sb-meta>
+                        </div>
+                        <h3><sb-var data-var="category"></sb-var></h3>
+                      </sb-task-header>
+                      <p><sb-var data-var="description"></sb-var></p>
+                      <p class="sb-task-host"><sb-var data-var="host"></sb-var></p>
+                      <p>
+                        <a href="#" data-mouseover="openLink" data-click="openLink" class="sb-task-link"><sb-var data-var="link"></sb-var></a>
+                      </p>
+                      <p>
+                        <a aria-label="Download attachment" href="#" download data-mouseover="openLink" data-click="openLink" class="sb-task-attachment"><sb-var data-var="attachment"></sb-var></a>
+                      </p>
+                      <form action="javascript:">
+                        <div>
+                          <input aria-label="Flag" type="text" pattern="CTF\{[^{}]+\}" tabindex="1" placeholder="CTF{...}" spellcheck="false" class="sb-glow-border"/>
+                          <span aria-live="assertive" role="alert"><strong><sb-var data-var="error"></sb-var></strong></span>
+                        </div>
+                        <div class="sb-task-foot">
+                          <input type="submit" tabindex="2" class="sb-glow-border" value="Submit flag">
+                        </div>
+                      </form>
+                    </sb-task-dialog>
+                  </sb-task-dialog-container>
+                </template>
+              </sb-quest-tasks>
+            </sb-quest>
+        </sb-content>
+        <sb-content role="main" id="login" class="sb-account-page">
+          <sb-login-dialog role="dialog" data-submit="joinTeam" class="sb-glow-border">
+            <h3 class="sb-dashed">Sign In</h3>
+            <label>
+              <h4>Team Secret Key</h4>
+              <input type="text" form="sb-login-form" pattern="^[a-zA-Z0-9_-]{20}$" spellcheck="false"
+                class="sb-glow-border">
+              <span>If you don't have a team key, you can create a new team.</span>
+            </label>
+            <br>
+            <input form="sb-login-form" type="submit" value="Join Team" class="sb-glow-border">
+            <form id="sb-login-form" action="javascript:"></form>
+          </sb-login-dialog>
+          <div>
+            <a href="#register">[Create New Team]</a> or <a href="#login" data-click="recoverTeam">[Recover Old
+              Team]</a>
+          </div><br><br><br><br><br>
+        </sb-content>
+        <sb-content role="main" id="register" class="sb-account-page">
+          <sb-login-dialog role="dialog" data-submit="createTeam" class="sb-glow-border">
+            <h3 class="sb-dashed">Create New Team</h3>
+            <label>
+              <h4>Team Name</h4>
+              <input type="text" form="sb-register-form" pattern="^[^/#$.[\]]+$" class="sb-glow-border">
+              <span>The following characters are not allowed: /#$.[]</span>
+              <br>
+            </label>
+            <input form="sb-register-form" type="submit" value="Create Team" class="sb-glow-border">
+            <form id="sb-register-form" action="javascript:"></form>
+          </sb-login-dialog>
+          <div>
+            or <a href="#login">[Join Existing Team]</a>
+          </div><br><br><br><br><br>
+        </sb-content>
+        <sb-content role="main" id="challenges">
+          <sb-categoryList>
+            <template id="sb-category" class="sb-table">
+              <h2>
+                <sb-var data-var="id"></sb-var>
+              </h2>
+            </template>
+            <template id="sb-task" class="sb-glow-border" data-click="setTaskActive/true" data-submit="submitFlag">
+              <sb-task-details role="button">
+                <h4>
+                  <sb-var data-var="name"></sb-var>
+                </h4>
+                <sb-meta>
+                  <sb-var data-var="label"></sb-var>
+                </sb-meta>
+              </sb-task-details>
+              <sb-task-stats>
+                <h3>
+                  <sb-var data-var="points"></sb-var>pt
+                </h3>
+                <sb-meta>
+                  <sb-var data-var="solves"></sb-var> solves
+                </sb-meta>
+              </sb-task-stats>
+              <sb-task-dialog-container>
+                <sb-task-dialog aria-modal="true" role="dialog" class="sb-glow-border">
+                  <sb-task-header class="sb-dashed" data-click="setTaskActive/false">
+                    <div class="sb-task-title">
+                      <h2>
+                        <sb-var data-var="name"></sb-var>
+                      </h2>
+                      <sb-meta>
+                        <sb-var data-var="label"></sb-var>
+                      </sb-meta>
+                    </div>
+                    <h3>
+                      <sb-var data-var="points"></sb-var>pt
+                    </h3>
+                  </sb-task-header>
+                  <p>
+                    <sb-var data-var="description"></sb-var>
+                  </p>
+                  <p class="sb-task-host">
+                    <sb-var data-var="host"></sb-var>
+                  </p>
+                  <p>
+                    <a href="#" data-mouseover="openLink" data-click="openLink" class="sb-task-link">
+                      <sb-var data-var="link"></sb-var>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#" download data-mouseover="openLink" data-click="openLink" class="sb-task-attachment">
+                      <sb-var data-var="attachment"></sb-var>
+                    </a>
+                    &nbsp;
+                    <a href="#" download data-mouseover="openLink" data-click="openLink" class="sb-task-attachment2">
+                      <sb-var data-var="attachment2"></sb-var>
+                    </a>
+                  </p>
+                  <form action="javascript:">
+                    <div>
+                      <input aria-label="Flag" type="text" tabindex="1" pattern="FLAG\{[^{}]+\}"
+                        placeholder="FLAG{...}" spellcheck="false" class="sb-glow-border" />
+                      <span aria-live="assertive" role="alert"><strong>
+                          <sb-var data-var="error"></sb-var>
+                        </strong></span>
+                    </div>
+                    <div class="sb-task-foot">
+                      <div class="sb-task-teams">
+                        <p>Solved by:</p>
+                        <p>
+                          <sb-var data-var="teams"></sb-var>
+                        </p>
+                      </div>
+                      <input type="submit" tabindex="2" class="sb-glow-border" value="Submit flag">
+                    </div>
+                  </form>
+                </sb-task-dialog>
+              </sb-task-dialog-container>
+            </template>
+          </sb-categoryList>
+        </sb-content>
+        <sb-content role="main" id="scoreboard">
+          <sb-chart>
+            <sb-chart-head>
+              <h2>Scoreboard</h2>
+              <div class="sb-dashed sb-spacer"></div>
+              <h3>Top 10 Teams</h3>
+            </sb-chart-head>
+            <sb-chart-labels class="sb-glow-border">
+              <sb-chart-label data-sb="true" data-id="rank-1"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-2"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-3"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-4"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-5"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-6"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-7"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-8"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-9"></sb-chart-label>
+              <sb-chart-label data-sb="true" data-id="rank-10"></sb-chart-label>
+              <template id="sb-chart-label">
+                <sb-var data-var="name"></sb-var>
+              </template>
+            </sb-chart-labels>
+            <div class="sb-chart-graph" role="presentation" aria-hidden="true">
+              <svg viewBox="0 -10 200 110">
+                <pattern id="sb-chart-graph-grid" width="10" height="5" patternUnits="userSpaceOnUse">
+                  <path class="sb-chart-graph-grid" d="m 0 0 h 10 v 5" />
+                </pattern>
+                <g data-sb="true" data-id="labels">
+                  <text data-sb="true" data-id="v-label-0" x="0" y="100"></text>
+                  <text data-sb="true" data-id="v-label-1" x="0" y="75"></text>
+                  <text data-sb="true" data-id="v-label-2" x="0" y="50"></text>
+                  <text data-sb="true" data-id="v-label-3" x="0" y="25"></text>
+                  <text data-sb="true" data-id="v-label-4" x="0" y="0"></text>
+                </g>
+                <rect />
+                <g data-sb="true" data-id="rank-10">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-9">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-8">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-7">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-6">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-5">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-4">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-3">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-2">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+                <g data-sb="true" data-id="rank-1">
+                  <polyline>
+                    <title></title>
+                  </polyline>
+                </g>
+              </svg>
+            </div>
+          </sb-chart>
+        </sb-content>
+        <sb-content role="main" id="teams">
+          <sb-teamList class="sb-table" data-sort-by="rank">
+            <div class="sb-table-head">
+              <h2>Teams</h2>
+              <div class="sb-dashed sb-spacer"></div>
+              <h3>Rank</h3>
+            </div>
+            <div class="sb-table-head">
+              <h4>Place</h4>
+              <h4># Tasks</h4>
+              <h4 class="sb-spacer">Name</h4>
+              <h4>Score</h4>
+            </div>
+            <template id="sb-team" class="sb-table-row">
+              <span>
+                <sb-var data-var="rank"></sb-var>
+              </span>
+              <span>
+                <sb-var data-var="taskSummary"></sb-var>
+              </span>
+              <span>
+                <sb-var data-var="id"></sb-var>
+              </span>
+              <span>
+                <sb-var data-var="score"></sb-var>
+              </span>
+            </template>
+          </sb-teamList>
+          <h4 class="sb-load-more" role="button" data-click="loadMore"></h4>
+        </sb-content>
+      </sb-main>
+    </sb-border>
+  </div>
+  <script src="js/bootstrap.js" type="module"></script>
+</body>
+</html>

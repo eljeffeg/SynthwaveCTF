@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "commonmark": "^0.30.0",
+    "firebase": "^9.1.2",
+    "google-closure-compiler": "^20220104.0.0",
+    "xterm": "^4.14.1",
+    "xterm-addon-fit": "^0.5.0"
+  },
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  },
+  "scripts": {
+    "dev": "yarn snowpack dev",
+    "build": "yarn snowpack build",
+    "deploy": "yarn build && firebase deploy"
+  }
+}
